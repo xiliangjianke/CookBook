@@ -6,6 +6,21 @@
 
 
 
+AMyGameModeBase_Chapter04::AMyGameModeBase_Chapter04()
+{
+	CurrentScore = 0;
+}
+
+void AMyGameModeBase_Chapter04::SetScore(int32 NewScore)
+{
+	CurrentScore = NewScore;
+}
+
+int32 AMyGameModeBase_Chapter04::GetScore()
+{
+	return CurrentScore;
+}
+
 void AMyGameModeBase_Chapter04::BeginPlay()
 {
 	// Call the parent class version of this function

@@ -15,6 +15,18 @@ class COOKBOOK_API AMyGameModeBase_Chapter04 : public AGameModeBase
 {
 	GENERATED_BODY()
 public:
+
+	// Constructor to initialize CurrentScore
+	AMyGameModeBase_Chapter04();
+
+	// Will set the CurrentScore variable
+	UFUNCTION(BlueprintCallable, Category = "MyFunction")
+		void SetScore(int32 NewScore);
+
+	// Getter
+	UFUNCTION(BlueprintCallable, Category = "MyFunction")
+		int32 GetScore();
+
 	virtual void BeginPlay() override;
 
 	UPROPERTY()
@@ -22,5 +34,9 @@ public:
 
 	UFUNCTION()
 		void DestroyActorFunction();
+private:
+	UPROPERTY()
+		int32 CurrentScore;
+
 	
 };
