@@ -9,6 +9,7 @@
 AMyGameModeBase_Chapter04::AMyGameModeBase_Chapter04()
 {
 	CurrentScore = 0;
+	DefaultPawnClass = AInventoryCharacter_Ch04::StaticClass();
 }
 
 void AMyGameModeBase_Chapter04::SetScore(int32 NewScore)

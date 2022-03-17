@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
 #include "MyFirstActor.h"
+#include "InventoryCharacter_Ch04.h"
 #include "MyGameModeBase_Chapter04.generated.h"
 
 /**
