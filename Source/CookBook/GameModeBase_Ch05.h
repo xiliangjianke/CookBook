@@ -13,6 +13,8 @@
 DECLARE_DELEGATE(FStandardDelegateSignature)
 // Delegate with parameter
 DECLARE_DELEGATE_OneParam(FParamDelegateSignature, FLinearColor)
+// Multicast
+DECLARE_MULTICAST_DELEGATE(FMulticastDelegateSignature)
 UCLASS()
 class COOKBOOK_API AGameModeBase_Ch05 : public AGameModeBase
 {
@@ -22,5 +24,7 @@ public:
 	FStandardDelegateSignature MyStandardDelegate;
 
 	FParamDelegateSignature MyParameterDelegate;
+
+	FMulticastDelegateSignature MyMulticastDelegate;
 	
 };

@@ -39,6 +39,12 @@ void AMyTriggerVolume_Ch05::NotifyActorBeginOverlap(AActor* OtherActor)
 			// Call the function using a parameter
 			auto Color = FLinearColor(1, 0, 0, 1);
 			MyGameMode->MyParameterDelegate.ExecuteIfBound(Color);
+
+			// Multicast
+			MyGameMode->MyMulticastDelegate.Broadcast();
+
+			// CustomEvent
+			OnplayerEntered.Broadcast();
 		}
 	}
 }

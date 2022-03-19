@@ -4,23 +4,17 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "Components/PointLightComponent.h"
-#include "ParaDelegateListener_Ch05.generated.h"
+#include "GameFramework/RotatingMovementComponent.h"
+#include "PickUp_Ch05.generated.h"
 
 UCLASS()
-class COOKBOOK_API AParaDelegateListener_Ch05 : public AActor
+class COOKBOOK_API APickUp_Ch05 : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AParaDelegateListener_Ch05();
-
-	UFUNCTION()
-		void SetLightColor(FLinearColor LightColor, bool EnableLight);
-
-	UPROPERTY()
-		UPointLightComponent* PointLight;
+	APickUp_Ch05();
 
 protected:
 	// Called when the game starts or when spawned

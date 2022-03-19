@@ -7,7 +7,8 @@
 #include "Components/BoxComponent.h"
 #include "MyTriggerVolume_Ch05.generated.h"
 
-
+// CustomEvent
+DECLARE_EVENT(AMyTriggerVolume_Ch05, FPlayerEntered)
 UCLASS()
 class COOKBOOK_API AMyTriggerVolume_Ch05 : public AActor
 {
@@ -25,6 +26,9 @@ public:
 
 	UFUNCTION()
 		virtual void NotifyActorEndOverlap(AActor* OtherActor) override;
+
+	// Instance of declared event
+	FPlayerEntered OnplayerEntered;
 
 protected:
 	// Called when the game starts or when spawned

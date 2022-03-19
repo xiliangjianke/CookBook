@@ -17,9 +17,10 @@ AParaDelegateListener_Ch05::AParaDelegateListener_Ch05()
 
 }
 
-void AParaDelegateListener_Ch05::SetLightColor(FLinearColor LightColor)
+void AParaDelegateListener_Ch05::SetLightColor(FLinearColor LightColor, bool EnableLight)
 {
 	PointLight->SetLightColor(LightColor);
+	PointLight->SetVisibility(EnableLight);
 }
 
 // Called when the game starts or when spawned
@@ -36,7 +37,7 @@ void AParaDelegateListener_Ch05::BeginPlay()
 
 		if (MyGameMode != nullptr)
 		{
-			MyGameMode->MyParameterDelegate.BindUObject(this, &AParaDelegateListener_Ch05::SetLightColor);
+			MyGameMode->MyParameterDelegate.BindUObject(this, &AParaDelegateListener_Ch05::SetLightColor, false);
 		}
 	}
 	

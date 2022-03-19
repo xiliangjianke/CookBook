@@ -5,22 +5,27 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/PointLightComponent.h"
-#include "ParaDelegateListener_Ch05.generated.h"
+#include "MulticastListener_Ch05.generated.h"
 
 UCLASS()
-class COOKBOOK_API AParaDelegateListener_Ch05 : public AActor
+class COOKBOOK_API AMulticastListener_Ch05 : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AParaDelegateListener_Ch05();
+	AMulticastListener_Ch05();
 
 	UFUNCTION()
-		void SetLightColor(FLinearColor LightColor, bool EnableLight);
+		void ToggleLight();
+
+	UFUNCTION()
+		virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
 
 	UPROPERTY()
 		UPointLightComponent* PointLight;
+
+	FDelegateHandle MyDelegateHandle;
 
 protected:
 	// Called when the game starts or when spawned
