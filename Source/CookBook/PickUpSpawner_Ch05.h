@@ -4,30 +4,31 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "GameFramework/RotatingMovementComponent.h"
-#include "PickUp_Ch05.generated.h"
+#include "PickUp_Ch05.h"
+#include "PickUpSpawner_Ch05.generated.h"
 
-// Custom event
-DECLARE_DELEGATE(FPickeupEventSignature)
 UCLASS()
-class COOKBOOK_API APickUp_Ch05 : public AActor
+class COOKBOOK_API APickUpSpawner_Ch05 : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	APickUp_Ch05();
-
-	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
+	APickUpSpawner_Ch05();
 
 	UPROPERTY()
-		UStaticMeshComponent* MyMesh;
+		USceneComponent* SpawnLocation;
+
+	UFUNCTION()
+		void PickupCollected();
+
+	UFUNCTION()
+		void SpawnPickup();
 
 	UPROPERTY()
-		URotatingMovementComponent* RotatingComponent;
+		APickUp_Ch05* CurrentPickup;
 
-	FPickeupEventSignature OnPickedUp;
-
+	FTimerHandle MyTimer;
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

@@ -21,6 +21,7 @@ class COOKBOOK_API AGameModeBase_Ch05 : public AGameModeBase
 	GENERATED_BODY()
 
 public:
+
 	FStandardDelegateSignature MyStandardDelegate;
 
 	FParamDelegateSignature MyParameterDelegate;
